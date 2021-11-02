@@ -1,0 +1,98 @@
+{
+    "schema": {
+        "crud_objects": {
+            "sheet": {
+                "operations": {
+                    "sheet_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/v4/spreadsheets/{sheet_id}/values/{sheet_name}"
+                        },
+                        "query_parameters": {
+                            "majorDimension":"ROWS"
+                        },
+                        "processing_options": {
+                            "output_field": "values"
+                        }
+                    }
+                },
+                "key": "range",
+                "resources": { 
+                    "range": "string*",
+                    "majorDimension": "string*",
+                    "values": ["string*"]
+                }
+            }
+        }
+    },
+    "rest": {
+        "config": {
+            "baseUrl": "https://sheets.googleapis.com",
+            "get": {
+                "maxPageCount": 500,
+                "query_parameters": {
+                    "customer": "my_customer"
+                }
+            },
+            "authentication": "certificate",
+            "call_handling": "google",
+            "test_connection": {
+                "url": "/v4/spreadsheets/{sheet_id}"
+            }
+        },
+        "authOptions": {
+            "scopes": [
+                "https://www.googleapis.com/auth/spreadsheets",
+                "https://www.googleapis.com/auth/admin.directory.user",
+                "https://www.googleapis.com/auth/admin.directory.group",
+                "https://www.googleapis.com/auth/admin.directory.orgunit",
+                "https://www.googleapis.com/auth/admin.directory.rolemanagement"
+            ],
+            "type": "signed-jwt",
+            "authUrl": "https://www.googleapis.com/oauth2/v4/token",
+            "postData": {
+                "grant_type": "urn:ietf:params:oauth:grant-type:jwt-bearer",
+                "assertion": {
+                    "name": "JWT"
+                }
+            },
+            "JWT": {
+                "iss": {
+                    "name": "clientId"
+                },
+                "scope": {
+                    "name": "scope"
+                },
+                "aud": {
+                    "name": "endpoint"
+                },
+                "exp": {
+                    "name": "oneHour"
+                },
+                "iat": {
+                    "name": "now"
+                },
+                "sub": {
+                    "name": "tenantId"
+                }
+            }
+        }
+    },
+    "connection": {
+        "items": [
+            {
+                "name": "sheet_id",
+                "type": "textbox",
+                "label": "Sheet Id:",
+                "value": ""
+            },
+            {
+                "name": "sheet_name",
+                "type": "textbox",
+                "label": "Sheet Range:",
+                "value": "Sheet1"
+            }
+        ]
+    }
+}
