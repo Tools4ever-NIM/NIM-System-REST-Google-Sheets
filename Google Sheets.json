@@ -3,7 +3,7 @@
         "crud_objects": {
             "sheet_data": {
                 "operations": {
-                    "courses_get": {
+                    "sheet_data_get": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
