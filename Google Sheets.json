@@ -1,23 +1,25 @@
 {
     "schema": {
         "crud_objects": {
-            "sheet": {
+            "sheet_data": {
                 "operations": {
-                    "sheet_get": {
+                    "courses_get": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
-                            "path": "/v4/spreadsheets/{sheet_id}/values/{sheet_name}"
+                            "path": "sheets.googleapis.com/v4/spreadsheets/{sheet_id}/values/{sheet_name}"
                         },
-                        "query_parameters": {
-                            "majorDimension":"ROWS"
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/spreadsheets"
+                            ]
                         },
                         "processing_options": {
                             "output_field": "values"
                         }
                     }
                 },
-                "key": "range",
+                "key": "id",
                 "resources": { 
                     "range": "string*",
                     "majorDimension": "string*",
@@ -28,17 +30,16 @@
     },
     "rest": {
         "config": {
-            "baseUrl": "https://sheets.googleapis.com",
+            "baseUrl": "https://",
             "get": {
-                "maxPageCount": 500,
+                "maxPageCount": -1,
                 "query_parameters": {
-                    "customer": "my_customer"
                 }
             },
             "authentication": "certificate",
             "call_handling": "google",
             "test_connection": {
-                "url": "/v4/spreadsheets/{sheet_id}"
+                "url": "sheets.googleapis.com/v4/spreadsheets/{sheet_id}"
             }
         },
         "authOptions": {
@@ -53,7 +54,13 @@
                     "name": "JWT"
                 }
             },
-            "JWT": {
+            "allowedHosts": [
+                    "licensing.googleapis.com",
+                    "www.googleapis.com",
+                    "classroom.googleapis.com",
+                    "admin.googleapis.com"
+                ],
+           "JWT": {
                 "iss": {
                     "name": "clientId"
                 },
