@@ -20,10 +20,8 @@
                     }
                 },
                 "key": "id",
-                "resources": { 
-                    "range": "string*",
-                    "majorDimension": "string*",
-                    "values": ["string*"]
+                "dynamic_resources": { 
+                    "type": "google_sheets"
                 }
             }
         }
