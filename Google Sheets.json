@@ -23,6 +23,98 @@
                 "dynamic_resources": { 
                     "type": "google_sheets"
                 }
+            },
+            "sheet2_data": {
+                "operations": {
+                    "sheet2_data_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "sheets.googleapis.com/v4/spreadsheets/{sheet2_id}/values/{sheet2_name}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/spreadsheets"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "values"
+                        }
+                    }
+                },
+                "key": "id",
+                "dynamic_resources": { 
+                    "type": "google_sheets"
+                }
+            },
+            "sheet3_data": {
+                "operations": {
+                    "sheet3_data_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "sheets.googleapis.com/v4/spreadsheets/{sheet3_id}/values/{sheet3_name}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/spreadsheets"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "values"
+                        }
+                    }
+                },
+                "key": "id",
+                "dynamic_resources": { 
+                    "type": "google_sheets"
+                }
+            },
+            "sheet4_data": {
+                "operations": {
+                    "sheet4_data_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "sheets.googleapis.com/v4/spreadsheets/{sheet4_id}/values/{sheet4_name}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/spreadsheets"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "values"
+                        }
+                    }
+                },
+                "key": "id",
+                "dynamic_resources": { 
+                    "type": "google_sheets"
+                }
+            },
+            "sheet5_data": {
+                "operations": {
+                    "sheet5_data_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "sheets.googleapis.com/v4/spreadsheets/{sheet5_id}/values/{sheet5_name}"
+                        },
+                        "authOptions": {
+                            "scopes": [
+                              "https://www.googleapis.com/auth/spreadsheets"
+                            ]
+                        },
+                        "processing_options": {
+                            "output_field": "values"
+                        }
+                    }
+                },
+                "key": "id",
+                "dynamic_resources": { 
+                    "type": "google_sheets"
+                }
             }
         }
     },
@@ -30,9 +122,7 @@
         "config": {
             "baseUrl": "https://",
             "get": {
-                "maxPageCount": -1,
-                "query_parameters": {
-                }
+                "maxPageCount": -1
             },
             "authentication": "certificate",
             "call_handling": "google",
@@ -83,16 +173,122 @@
     "connection": {
         "items": [
             {
+                "type": "text",
+                "name": "sheet_Header",
+                "text": "",
+                "label": "Sheet Data"
+            },
+            {
                 "name": "sheet_id",
                 "type": "textbox",
                 "label": "Sheet Id:",
-                "value": ""
+                "value": "",
+                "label_indent": true,
+                "required": true
             },
             {
                 "name": "sheet_name",
                 "type": "textbox",
                 "label": "Sheet Range:",
-                "value": "Sheet1"
+                "value": "Sheet1",
+                "label_indent": true,
+                "required": true
+            },
+            {
+                "type": "text",
+                "name": "sheet2_Header",
+                "text": "",
+                "label": "Sheet Data 2"
+                ,
+                "hidden": "!sheet_id"
+            },
+            {
+                "name": "sheet2_id",
+                "type": "textbox",
+                "label": "Sheet Id:",
+                "value": "",
+                "label_indent": true,
+                "hidden": "!sheet_id"
+            },
+            {
+                "name": "sheet2_name",
+                "type": "textbox",
+                "label": "Sheet Range:",
+                "value": "",
+                "label_indent": true,
+                "hidden": "!sheet_id"
+            },
+            {
+                "type": "text",
+                "name": "sheet3_Header",
+                "text": "",
+                "label": "Sheet Data 3"
+                ,
+                "hidden": "!sheet2_id"
+            },
+            {
+                "name": "sheet3_id",
+                "type": "textbox",
+                "label": "Sheet Id:",
+                "value": "",
+                "label_indent": true,
+                "hidden": "!sheet2_id"
+            },
+            {
+                "name": "sheet3_name",
+                "type": "textbox",
+                "label": "Sheet Range:",
+                "value": "",
+                "label_indent": true,
+                "hidden": "!sheet2_id"
+            },
+            {
+                "type": "text",
+                "name": "sheet4_Header",
+                "text": "",
+                "label": "Sheet Data 4"
+                ,
+                "hidden": "!sheet3_id"
+            },
+            {
+                "name": "sheet4_id",
+                "type": "textbox",
+                "label": "Sheet Id:",
+                "value": "",
+                "label_indent": true,
+                "hidden": "!sheet3_id"
+            },
+            {
+                "name": "sheet4_name",
+                "type": "textbox",
+                "label": "Sheet Range:",
+                "value": "",
+                "label_indent": true,
+                "hidden": "!sheet3_id"
+            },
+            {
+                "type": "text",
+                "name": "sheet5_Header",
+                "text": "",
+                "label": "Sheet Data 5"
+                ,
+                "hidden": "!sheet4_id"
+            },
+            {
+                "name": "sheet5_id",
+                "type": "textbox",
+                "label": "Sheet Id:",
+                "value": "",
+                "label_indent": true,
+                "hidden": "!sheet4_id"
+            },
+            {
+                "name": "sheet5_name",
+                "type": "textbox",
+                "label": "Sheet Range:",
+                "value": "",
+                "label_indent": true,
+                "hidden": "!sheet4_id"
             }
         ]
     }
